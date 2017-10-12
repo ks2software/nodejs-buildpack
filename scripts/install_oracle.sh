@@ -18,3 +18,5 @@ export OCI_LIB_DIR=$PWD
 export OCI_INC_DIR=$PWD/sdk/include
 echo $OCI_LIB_DIR
 echo $OCI_INC_DIR
+
+npm i oracle -g
