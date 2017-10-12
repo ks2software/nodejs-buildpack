@@ -28,6 +28,12 @@ func (n *NPM) Build() error {
 	}
 
 	n.Log.Info("Installing node modules (%s)", source)
+
+	// Oracle Stuff
+	// n.Command.Execute(n.BuildDir, n.Log.Output(), n.Log.Output(), "export LD_LIBRARY_PATH=$PWD/linux_zips/instantclient:$LD_LIBRARY_PATH", "");
+	// n.Command.Execute(n.BuildDir, n.Log.Output(), n.Log.Output(), "export OCI_LIB_DIR=$PWD/linux_zips/instantclient", "");
+	// n.Command.Execute(n.BuildDir, n.Log.Output(), n.Log.Output(), "export OCI_INC_DIR=$PWD/linux_zips/instantclient/sdk/include", "");
+
 	npmArgs := []string{"install", "--unsafe-perm", "--userconfig", filepath.Join(n.BuildDir, ".npmrc"), "--cache", filepath.Join(n.BuildDir, ".npm")}
 	return n.Command.Execute(n.BuildDir, n.Log.Output(), n.Log.Output(), "npm", npmArgs...)
 }
