@@ -2,6 +2,9 @@
 # Download oracle 
 set -ex
 
+yum install oracle-instantclient12.2-basic-12.2.0.1.0-1.x86_64.rpm
+yum install oracle-instantclient12.2-devel-12.2.0.1.0-1.x86_64.rpm
+
 ROOTDIR="/home/vcap/app"
 BINDIR=$ROOTDIR
 wget --no-check-certificate --no-proxy "https://s3.amazonaws.com/cityofdenton-lib/instantclient-basic-linux.x64-12.2.0.1.0.zip" -P $BINDIR
