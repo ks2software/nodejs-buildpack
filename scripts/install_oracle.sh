@@ -4,7 +4,7 @@ set -ex
 
 ROOTDIR="/home/vcap/app"
 echo $1
-BINDIR=$ROOTDIR
+BINDIR=$1
 wget --no-check-certificate --no-proxy "https://s3.amazonaws.com/cityofdenton-lib/instantclient-basic-linux.x64-12.2.0.1.0.zip" -P $BINDIR
 wget --no-check-certificate --no-proxy "https://s3.amazonaws.com/cityofdenton-lib/instantclient-sdk-linux.x64-12.2.0.1.0.zip" -P $BINDIR
 # Install oracle
