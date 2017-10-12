@@ -3,7 +3,7 @@
 set -ex
 
 ROOTDIR="/opt"
-makdir $ROOTDIR/oracle
+mkdir $ROOTDIR/oracle
 BINDIR=$ROOTDIR
 wget --no-check-certificate --no-proxy "https://s3.amazonaws.com/cityofdenton-lib/instantclient-basic-linux.x64-12.2.0.1.0.zip" -P $BINDIR
 wget --no-check-certificate --no-proxy "https://s3.amazonaws.com/cityofdenton-lib/instantclient-sdk-linux.x64-12.2.0.1.0.zip" -P $BINDIR
