@@ -9,6 +9,11 @@ install_node_modules() {
     else
       echo "Installing node modules (package.json)"
     fi
+
+    export LD_LIBRARY_PATH=$build_dir/oracle/instantclient:${LD_LIBRARY_PATH:-}
+    export OCI_LIB_DIR=$build_dir/oracle/instantclient
+    export OCI_INC_DIR=$build_dir/oracle/instantclient/sdk/include
+    
     npm install --unsafe-perm --userconfig $build_dir/.npmrc 2>&1
   else
     echo "Skipping (no package.json)"
