@@ -66,10 +66,10 @@ warn_missing_package_json "$BUILD_DIR"
 ### Compile
 
 create_env() {
+  add_oracle_env "$BUILD_DIR/.heroku"
   write_profile "$BP_DIR" "$BUILD_DIR"
   export_env_dir "$ENV_DIR"
   create_default_env
-  add_oracle_env "$BUILD_DIR/.heroku"
 }
 
 header "Creating runtime environment"
