@@ -13,8 +13,8 @@ wget --no-check-certificate --no-proxy "https://s3.amazonaws.com/cityofdenton-li
 wget --no-check-certificate --no-proxy "https://s3.amazonaws.com/cityofdenton-lib/instantclient-sdk-linux.x64-12.2.0.1.0.zip" -P $BINDIR
 # Install oracle
 cd $BINDIR
-unzip instantclient-basic-linux.x64-12.2.0.1.0.zip
-unzip instantclient-sdk-linux.x64-12.2.0.1.0.zip
+unzip -q instantclient-basic-linux.x64-12.2.0.1.0.zip
+unzip -q instantclient-sdk-linux.x64-12.2.0.1.0.zip
 mv instantclient_12_2 instantclient
 cd instantclient
 cp libclntsh.so.12.1 libclntsh.so
