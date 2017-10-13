@@ -32,3 +32,23 @@ rebuild_node_modules() {
     echo "Skipping (no package.json)"
   fi
 }
+
+install_oracle_libraries(){
+  echo $HOME
+  local build_dir=${1:-}
+  echo "Installing oracle libraries"
+  mkdir -p $build_dir/oracle
+  cd $build_dir/oracle
+  local basic_download_url="https://s3.amazonaws.com/cityofdenton-lib/instantclient-basic-linux.x64-12.2.0.1.0.zip"
+  local sdk_download_url="https://s3.amazonaws.com/cityofdenton-lib/instantclient-sdk-linux.x64-12.2.0.1.0.zip"
+  curl -k "$basic_download_url" --silent --fail --retry 5 --retry-max-time 15 -o instantclient-basic.zip
+  echo "Downloaded [$basic_download_url]"
+  curl -k "$sdk_download_url" --silent --fail --retry 5 --retry-max-time 15 -o instantclient-sdk.zip
+  echo "Downloaded [$sdk_download_url]"
+  echo "unzipping libraries"
+  unzip instantclient-basic.zip
+  unzip instantclient-sdk.zip
+  mv instantclient_12_1 instantclient
+  cd instantclient
+  ln -s libclntsh.so.12.1 libclntsh.so
+}
