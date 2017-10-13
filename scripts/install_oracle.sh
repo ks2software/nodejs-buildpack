@@ -2,8 +2,7 @@
 # Download oracle 
 set -ex
 
-yum install oracle-instantclient12.2-basic-12.2.0.1.0-1.x86_64.rpm
-yum install oracle-instantclient12.2-devel-12.2.0.1.0-1.x86_64.rpm
+sudo apt-get install libaio1
 
 ROOTDIR="/home/vcap/app"
 BINDIR=$ROOTDIR
