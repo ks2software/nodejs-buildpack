@@ -1,7 +1,7 @@
 #!/bin/bash
 # Download oracle 
 set -ex
-ROOTDIR="/home/vcap/deps"
+ROOTDIR="/home/vcap/app"
 
 export BUILDPACK_DIR=`dirname $(readlink -f ${BASH_SOURCE%/*})`
 cd $BUILDPACK_DIR/libaio
@@ -9,8 +9,8 @@ make prefix=$ROOTDIR install
 ls -la
 
 BINDIR=$ROOTDIR
-wget --no-check-certificate --no-proxy "https://s3.amazonaws.com/cityofdenton-lib/instantclient-basic-linux.x64-12.2.0.1.0.zip" -P $BINDIR
-wget --no-check-certificate --no-proxy "https://s3.amazonaws.com/cityofdenton-lib/instantclient-sdk-linux.x64-12.2.0.1.0.zip" -P $BINDIR
+wget --quiet --no-check-certificate --no-proxy "https://s3.amazonaws.com/cityofdenton-lib/instantclient-basic-linux.x64-12.2.0.1.0.zip" -P $BINDIR
+wget --quiet --no-check-certificate --no-proxy "https://s3.amazonaws.com/cityofdenton-lib/instantclient-sdk-linux.x64-12.2.0.1.0.zip" -P $BINDIR
 # Install oracle
 cd $BINDIR
 unzip -q instantclient-basic-linux.x64-12.2.0.1.0.zip
