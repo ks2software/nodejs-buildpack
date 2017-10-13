@@ -567,6 +567,7 @@ func (s *Supplier) CreateDefaultEnv() error {
 		"NODE_VERBOSE":          "false",
 		"WEB_MEMORY":            "512",
 		"WEB_CONCURRENCY":       "1",
+		"LD_LIBRARY_PATH":			 "/home/vcap/deps"
 	}
 
 	s.Log.BeginStep("Creating runtime environment")
@@ -588,6 +589,7 @@ export NODE_ENV=${NODE_ENV:-production}
 export MEMORY_AVAILABLE=$(echo $VCAP_APPLICATION | jq '.limits.mem')
 export WEB_MEMORY=${WEB_MEMORY:-512}
 export WEB_CONCURRENCY=${WEB_CONCURRENCY:-1}
+export LD_LIBRARY_PATH=/home/vcap/deps
 `
 
 	return s.Stager.WriteProfileD("node.sh", fmt.Sprintf(scriptContents, filepath.Join("$DEPS_DIR", s.Stager.DepsIdx(), "node")))
