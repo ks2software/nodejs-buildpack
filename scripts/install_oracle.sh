@@ -1,7 +1,7 @@
 #!/bin/bash
 # Download oracle 
 set -ex
-ROOTDIR="/home/vcap/deps"
+ROOTDIR="/home/vcap/app"
 
 export BUILDPACK_DIR=`dirname $(readlink -f ${BASH_SOURCE%/*})`
 cd $BUILDPACK_DIR/libaio
