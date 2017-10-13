@@ -567,7 +567,7 @@ func (s *Supplier) CreateDefaultEnv() error {
 		"NODE_VERBOSE":          "false",
 		"WEB_MEMORY":            "512",
 		"WEB_CONCURRENCY":       "1",
-		"LD_LIBRARY_PATH":			 "/home/vcap/deps"
+		"LD_LIBRARY_PATH":			 "/home/vcap/deps",
 	}
 
 	s.Log.BeginStep("Creating runtime environment")
