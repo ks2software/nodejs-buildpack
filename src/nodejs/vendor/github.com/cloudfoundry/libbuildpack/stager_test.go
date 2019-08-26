@@ -120,7 +120,7 @@ var _ = Describe("Stager", func() {
 	Describe("CheckBuildpackValid", func() {
 		BeforeEach(func() {
 			oldCfStack = os.Getenv("CF_STACK")
-			err = os.Setenv("CF_STACK", "cflinuxfs2")
+			err = os.Setenv("CF_STACK", "cflinuxfs3")
 			Expect(err).To(BeNil())
 		})
 
