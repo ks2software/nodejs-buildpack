@@ -2,7 +2,7 @@
 language: nodejs
 default_versions:
 - name: node
-  version: 10.22.1
+  version: 4.8.4
 include_files:
 - CHANGELOG
 - CONTRIBUTING.md
@@ -92,12 +92,4 @@ dependencies:
   md5: b04311a8eba837ded93119467115ba4b
   cf_stacks:
   - cflinuxfs3
-- name: node
-  version: 10.22.1
-  uri: https://buildpacks.cloudfoundry.org/dependencies/node/node_10.22.1_linux_x64_cflinuxfs3_d84ec1b7.tgz
-  md5: ed428cd345c3e2b859821cb2dbd5e7b2
-  cf_stacks:
-  - cflinuxfs3
-  source: https://nodejs.org/dist/v10.22.1/node-v10.22.1.tar.gz
-  source_sha256: d0b49dd96ac70e99240458863efe09ae5bb1138c0ff582295f882c1482708172
 pre_package: scripts/build.sh
